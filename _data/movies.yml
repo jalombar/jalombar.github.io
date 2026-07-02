@@ -1,0 +1,58 @@
+# Simulation movies on the Research page. Files live in assets/movies/
+# with a matching poster frame in assets/images/posters/.
+- title: Two stars in a high-speed grazing collision
+  file: /assets/movies/stripped-stars-case32.mp4
+  poster: /assets/images/posters/stripped-stars-case32.jpg
+  caption: >-
+    A grazing collision at 5,000 km/s near a galactic center. Both stars
+    survive, but each is stripped of its outer layers. From Gibson et al. 2025.
+
+- title: A hit-and-run between stars
+  file: /assets/movies/stripped-stars-case33.mp4
+  poster: /assets/images/posters/stripped-stars-case33.jpg
+  caption: >-
+    At 6,000 km/s the stars barely touch, yet one is left permanently
+    stripped. From Gibson et al. 2025.
+
+- title: A head-on impact at 3,500 km/s
+  file: /assets/movies/stripped-stars-case6.mp4
+  poster: /assets/images/posters/stripped-stars-case6.jpg
+  caption: >-
+    A direct hit transfers mass between the stars and leaves one stripped
+    survivor. From Gibson et al. 2025.
+
+- title: The making of a blue straggler
+  file: /assets/movies/blue-straggler-density.mp4
+  poster: /assets/images/posters/blue-straggler-density.jpg
+  caption: >-
+    Two ordinary cluster stars collide and merge into a heavier, seemingly
+    younger star. This simulation, by Alexander Brown '09 and Lombardi, was
+    featured on the History Channel series The Universe.
+
+- title: Inside a stellar collision
+  file: /assets/movies/blue-straggler-cross-section.mp4
+  poster: /assets/images/posters/blue-straggler-cross-section.jpg
+  caption: >-
+    A cross-section through the orbital plane as two stars collide; colors
+    show the density of the gas.
+
+- title: Two red giants merge
+  file: /assets/movies/twin-binary-merger.mp4
+  poster: /assets/images/posters/twin-binary-merger.jpg
+  caption: >-
+    Twin red giants orbiting just inside the stability limit shed mass and
+    spiral together. From Lombardi et al. 2011.
+
+- title: A neutron star captures a companion
+  file: /assets/movies/ucxb-formation.mp4
+  poster: /assets/images/posters/ucxb-formation.jpg
+  caption: >-
+    A neutron star plows through a bloated subgiant star, the first step
+    toward an ultracompact X-ray binary.
+
+- title: Giants collide in a young cluster
+  file: /assets/movies/imbh-runaway-collision.mp4
+  poster: /assets/images/posters/imbh-runaway-collision.jpg
+  caption: >-
+    A 53 and an 18 solar mass star collide in a runaway merger sequence that
+    may build intermediate-mass black holes.

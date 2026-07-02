@@ -1,0 +1,155 @@
+---
+layout: default
+title: Research
+description: >-
+  The Lombardi group simulates collisions and mergers between stars. See what
+  we do, our recent papers, and movies of the simulations.
+permalink: /research/
+---
+
+<div class="hero" style="background-image: url('{{ '/assets/images/hero-research.jpg' | relative_url }}');">
+  <div class="wrap">
+    <div class="hero-panel">
+      <h1>Simulating Stellar Collisions</h1>
+      <p>
+        In crowded star clusters and near giant black holes, stars really do
+        crash into each other. My students and I recreate those crashes on
+        supercomputers.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <h2>What we do</h2>
+  <p>
+    Our group studies what happens when stars get too close to each other. We
+    use a technique called smoothed particle hydrodynamics, or SPH: a star is
+    modeled as hundreds of thousands of fluid particles, and the computer
+    follows every particle through the encounter as gravity and gas pressure
+    fight it out. We can replay a collision from any angle, slow it down, and
+    measure things no telescope ever could.
+  </p>
+  <p>
+    Around quiet neighborhoods like the Sun's, collisions essentially never
+    happen. In the dense cores of globular clusters and near the supermassive
+    black holes at the centers of galaxies, they are a fact of life, and the
+    wreckage explains some of the strangest objects in the sky: "blue
+    straggler" stars that look impossibly young, stars stripped of their outer
+    layers, ultracompact X-ray binaries, and sources of gravitational waves.
+  </p>
+  <p>
+    A stellar collision unfolds over hours to days, and the chance of pointing
+    a telescope at the right star at the right moment is essentially zero.
+    Simulation is how we get to watch one. We build and share the SPH code
+    <a href="https://github.com/jalombar/starsmasher" target="_blank" rel="noopener">StarSmasher</a>
+    for exactly this purpose, and much of our work happens within the
+    <a href="https://manybody.org/modest" target="_blank" rel="noopener">MODEST</a>
+    collaboration, which connects the communities modeling stellar dynamics,
+    stellar evolution, and hydrodynamics.
+  </p>
+
+  <h2>Recent work</h2>
+  <p class="section-note">
+    A sampling of our papers from the last few years. Every figure comes from
+    the paper it accompanies, and Allegheny undergraduates contributed to the
+    simulations behind them.
+  </p>
+
+  <ul class="card-grid">
+    {% for paper in site.data.papers %}
+    <li class="card">
+      <figure class="figure">
+        <img src="{{ paper.image | relative_url }}" alt="{{ paper.image_alt }}" loading="lazy">
+        <figcaption>
+          Figure from <a href="https://arxiv.org/abs/{{ paper.arxiv }}" target="_blank" rel="noopener">{{ paper.citation }}</a>
+        </figcaption>
+      </figure>
+      <div class="card-body">
+        <h3>{{ paper.title }}</h3>
+        <p>{{ paper.blurb }}</p>
+        <div class="card-links">
+          <a class="btn" href="https://arxiv.org/abs/{{ paper.arxiv }}" target="_blank" rel="noopener">arXiv</a>
+          <a class="btn" href="{{ paper.ads }}" target="_blank" rel="noopener">ADS</a>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <h3>More recent papers</h3>
+  <ul class="pub-list">
+    <li>
+      Kremer et al. 2023, Monthly Notices of the Royal Astronomical Society:
+      the flares produced when a stellar-mass black hole shreds a star and
+      winds reprocess the light
+      (<a href="https://arxiv.org/abs/2305.08905" target="_blank" rel="noopener">arXiv</a>,
+      <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2305.08905/abstract" target="_blank" rel="noopener">ADS</a>).
+    </li>
+    <li>
+      Kremer et al. 2022, The Astrophysical Journal: a survey of collisions
+      and close encounters between black holes and main-sequence stars
+      (<a href="https://arxiv.org/abs/2201.12368" target="_blank" rel="noopener">arXiv</a>,
+      <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2201.12368/abstract" target="_blank" rel="noopener">ADS</a>).
+    </li>
+    <li>
+      Hatfull et al. 2021, Monthly Notices of the Royal Astronomical Society:
+      building realistic 3D models of touching binary stars on their way to a
+      merger
+      (<a href="https://arxiv.org/abs/2107.11480" target="_blank" rel="noopener">arXiv</a>,
+      <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2107.11480/abstract" target="_blank" rel="noopener">ADS</a>).
+    </li>
+  </ul>
+  <p>
+    <a class="btn btn-solid" href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-7444-7599&amp;sort=date+desc" target="_blank" rel="noopener">All publications on NASA ADS</a>
+  </p>
+
+  <h2>Watch the simulations</h2>
+  <p class="section-note">
+    Movies rendered directly from our simulations. Use them freely, but please
+    credit the paper listed in the caption.
+  </p>
+
+  <div class="video-grid">
+    {% for movie in site.data.movies %}
+    <figure class="video-item">
+      <video controls preload="metadata" poster="{{ movie.poster | relative_url }}">
+        <source src="{{ movie.file | relative_url }}" type="video/mp4">
+      </video>
+      <h3>{{ movie.title }}</h3>
+      <figcaption>{{ movie.caption }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+
+  <h2>Software</h2>
+  <p>
+    <a href="https://github.com/jalombar/starsmasher" target="_blank" rel="noopener">StarSmasher</a>
+    is the SPH code behind our simulations, developed openly on GitHub and
+    descended from the earlier StarCrash code. If you want to smash stars
+    together yourself, start there.
+  </p>
+  <p>
+    Make Me A Star (MMAS) is an older, lightweight tool that builds a model of
+    a collision product from two parent stars, developed with Jessica Sawyer
+    Warren and released under the GNU GPL. Download:
+    <a href="{{ '/assets/software/mmas/mmas1.6.tar.gz' | relative_url }}">version 1.6</a>
+    (or earlier releases:
+    <a href="{{ '/assets/software/mmas/mmas1.1.tar.gz' | relative_url }}">1.1</a>,
+    <a href="{{ '/assets/software/mmas/mmas1.2.tar.gz' | relative_url }}">1.2</a>,
+    <a href="{{ '/assets/software/mmas/mmas1.3.tar.gz' | relative_url }}">1.3</a>,
+    <a href="{{ '/assets/software/mmas/mmas1.4.tar.gz' | relative_url }}">1.4</a>,
+    <a href="{{ '/assets/software/mmas/mmas1.5.tar.gz' | relative_url }}">1.5</a>).
+    Two earlier tools, TRIPTYCH and TRIPLETYCH, have been retired.
+  </p>
+
+  <h2>For prospective students</h2>
+  <p>
+    Everything on this page was built with Allegheny College undergraduates:
+    they set up the simulations, analyze the results, and co-author the
+    papers. If you are a high school student wondering whether astrophysics
+    might be for you, or an Allegheny student looking for a research
+    experience, I would love to hear from you at
+    <a href="mailto:jalombar@allegheny.edu">jalombar@allegheny.edu</a>.
+  </p>
+</div>
