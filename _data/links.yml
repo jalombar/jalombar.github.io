@@ -1,0 +1,49 @@
+# Favorite Links page content. Each category becomes a section heading.
+# To add a link, copy a title/url/note block. External URLs only.
+- category: The sky and its pictures
+  links:
+    - title: Astronomy Picture of the Day
+      url: "https://apod.nasa.gov/apod/"
+      note: A new image of the universe every day, with a short explanation by astronomers.
+    - title: Webb Space Telescope image galleries
+      url: "https://webbtelescope.org/images"
+      note: The sharpest infrared views of the cosmos ever taken.
+    - title: SEDS Messier Database
+      url: "http://messier.seds.org/"
+      note: A classic guide to the Messier catalog, including the star clusters our group studies.
+    - title: Stellarium Web
+      url: "https://stellarium-web.org"
+      note: A free planetarium in your browser. See what is above your horizon tonight.
+
+- category: Learning astrophysics
+  links:
+    - title: Ned Wright's Cosmology Tutorial
+      url: "https://www.astro.ucla.edu/~wright/cosmolog.htm"
+      note: A time-tested introduction to modern cosmology, from basics to research level.
+    - title: NASA Universe
+      url: "https://science.nasa.gov/universe/"
+      note: NASA's hub for stars, galaxies, black holes, and the science behind the missions.
+
+- category: Research tools
+  links:
+    - title: NASA Astrophysics Data System
+      url: "https://ui.adsabs.harvard.edu/"
+      note: The search engine astronomers use to find research papers.
+    - title: arXiv astro-ph
+      url: "https://arxiv.org/list/astro-ph/new"
+      note: New astrophysics research papers, posted daily and free to read.
+    - title: NEMO Stellar Dynamics Toolbox
+      url: "https://teuben.github.io/nemo/"
+      note: A long-running toolbox for stellar dynamics simulations and analysis.
+    - title: Joshua Barnes on stellar collisions
+      url: "https://home.ifa.hawaii.edu/~barnes/research/stellar_collisions/index.html"
+      note: A fellow simulator's take on colliding stars and galaxies.
+
+- category: Community
+  links:
+    - title: MODEST
+      url: "https://manybody.org/modest"
+      note: The Modeling Dense Stellar Systems collaboration, which unites the communities working on cluster dynamics, stellar evolution, and hydrodynamics.
+    - title: Allegheny College Department of Physics
+      url: "https://sites.allegheny.edu/physics/"
+      note: My academic home, and a great place to study physics as an undergraduate.

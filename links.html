@@ -1,0 +1,28 @@
+---
+layout: default
+title: Favorite Links
+description: >-
+  Astronomy links Jamie Lombardi recommends, from daily sky pictures to the
+  tools researchers use.
+permalink: /links/
+---
+
+<div class="wrap">
+  <h1>Favorite Links</h1>
+  <p class="lede">
+    Places on the web I find myself returning to, whether to admire the
+    universe or to get work done. All links open in a new tab.
+  </p>
+
+  {% for group in site.data.links %}
+  <h2>{{ group.category }}</h2>
+  <ul class="link-list">
+    {% for link in group.links %}
+    <li>
+      <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a>
+      <span class="link-note">{{ link.note }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</div>

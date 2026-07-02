@@ -1,0 +1,31 @@
+---
+layout: default
+title: Outreach
+description: >-
+  Talks, observatory resources, and hands-on science for students, teachers,
+  and anyone curious about astrophysics.
+permalink: /outreach/
+---
+
+<div class="wrap">
+  <h1>Outreach</h1>
+  <p class="lede">
+    Astronomy belongs to everyone. This page collects talks, images, and
+    hands-on projects for students, teachers, and the generally curious. It
+    carries on the spirit of the outreach working group I coordinated for the
+    <a href="https://manybody.org/modest" target="_blank" rel="noopener">MODEST</a>
+    collaboration.
+  </p>
+
+  {% for group in site.data.outreach %}
+  <h2>{{ group.category }}</h2>
+  <ul class="link-list">
+    {% for link in group.links %}
+    <li>
+      <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a>
+      <span class="link-note">{{ link.note }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</div>
