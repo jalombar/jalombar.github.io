@@ -1,0 +1,306 @@
+/* One stylesheet for the whole site. Colors and spacing live in the
+   custom properties below so the look can be retuned in one place. */
+
+:root {
+  --ink: #22293a;
+  --ink-soft: #56607a;
+  --paper: #ffffff;
+  --paper-tint: #f4f6fa;
+  --space: #101830;
+  --space-deep: #0a0f22;
+  --on-space: #e8ecf7;
+  --on-space-soft: #aab4d0;
+  --accent: #e2662c;
+  --accent-dark: #b84e1c;
+  --rule: #dde3ee;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --wrap: 62rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3 { font-family: var(--serif); line-height: 1.25; color: var(--ink); }
+h1 { font-size: 2rem; margin: 0 0 0.75rem; }
+h2 { font-size: 1.5rem; margin: 2.25rem 0 0.75rem; }
+h3 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
+
+a { color: var(--accent-dark); }
+a:hover { color: var(--accent); }
+
+img, video { max-width: 100%; height: auto; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 1.25rem; }
+
+main { padding-bottom: 3rem; }
+main > .wrap { padding-top: 2rem; }
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  background: var(--paper);
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+.skip-link:focus { left: 0.5rem; top: 0.5rem; }
+
+/* Header and navigation */
+
+.site-header {
+  background: var(--space);
+  border-bottom: 3px solid var(--accent);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.site-name {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--on-space);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.35rem 0.7rem;
+  color: var(--on-space-soft);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.97rem;
+}
+
+.site-nav a:hover { color: var(--on-space); background: rgba(255, 255, 255, 0.08); }
+.site-nav a.active { color: var(--on-space); background: rgba(255, 255, 255, 0.14); }
+
+/* Footer */
+
+.site-footer {
+  background: var(--space-deep);
+  color: var(--on-space-soft);
+  font-size: 0.95rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.site-footer a { color: var(--on-space); }
+
+/* Dark banner used on the home page and as the research hero */
+
+.banner {
+  background: var(--space);
+  color: var(--on-space);
+  padding: 3rem 0;
+}
+
+.banner h1 { color: #ffffff; font-size: 2.4rem; margin: 0; }
+.banner .tagline { color: var(--on-space-soft); font-size: 1.2rem; margin: 0.5rem 0 0; }
+
+.hero {
+  background-color: var(--space-deep);
+  background-size: cover;
+  background-position: center;
+  padding: 5.5rem 0;
+}
+
+/* Legibility scrim so hero text stays readable over the imagery */
+.hero .hero-panel {
+  max-width: 34rem;
+  background: rgba(8, 12, 28, 0.72);
+  padding: 1.5rem 1.75rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--accent);
+}
+
+.hero h1 { color: #ffffff; font-size: 2.4rem; margin: 0 0 0.75rem; }
+.hero p { color: var(--on-space); font-size: 1.15rem; margin: 0; }
+
+/* Intro row with the portrait */
+
+.intro {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 0.5rem;
+}
+
+.intro .portrait {
+  flex: 0 0 180px;
+  border-radius: 10px;
+}
+
+/* Card grids (home shortcuts and research papers) */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.25rem;
+  padding: 0;
+  margin: 1.5rem 0;
+  list-style: none;
+}
+
+.card {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--paper);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body { padding: 1rem 1.25rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+.card h3 { margin: 0; }
+.card p { margin: 0; color: var(--ink-soft); font-size: 0.98rem; }
+
+.card .figure {
+  margin: 0;
+  background: #000;
+}
+
+.card .figure img { display: block; width: 100%; height: 14rem; object-fit: cover; }
+
+.card .figure figcaption,
+.video-item figcaption {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 0.4rem 1.25rem;
+  background: var(--paper-tint);
+}
+
+.card-links { margin-top: auto; padding-top: 0.5rem; display: flex; gap: 0.6rem; }
+
+.shortcut-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  text-decoration: none;
+  background: var(--paper-tint);
+}
+.shortcut-card:hover { border-color: var(--accent); }
+.shortcut-card h2 { margin: 0 0 0.4rem; font-size: 1.25rem; }
+.shortcut-card p { margin: 0; color: var(--ink-soft); font-size: 0.97rem; }
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 7px;
+  border: 1px solid var(--accent-dark);
+  color: var(--accent-dark);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.btn:hover { background: var(--accent); border-color: var(--accent); color: #ffffff; }
+
+.btn-solid {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+.btn-solid:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #ffffff; }
+
+/* Wikipedia-style infobox on the About page */
+
+.infobox {
+  float: right;
+  width: 17.5rem;
+  margin: 0 0 1.25rem 1.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--paper-tint);
+  font-size: 0.92rem;
+  overflow: hidden;
+}
+
+.infobox img { display: block; width: 100%; }
+.infobox .infobox-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.6rem 0.75rem 0;
+}
+.infobox dl { margin: 0; padding: 0.5rem 0.9rem 0.9rem; }
+.infobox dt { font-weight: 600; margin-top: 0.55rem; }
+.infobox dd { margin: 0; color: var(--ink-soft); }
+
+/* Video gallery on the research page */
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.video-item {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.video-item video { display: block; width: 100%; background: #000; }
+.video-item h3 { margin: 0; padding: 0.75rem 1.25rem 0.35rem; }
+
+/* Grouped link lists (Favorite Links and Outreach pages) */
+
+.link-list { list-style: none; padding: 0; margin: 1rem 0 2rem; }
+
+.link-list li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.link-list .link-note { display: block; color: var(--ink-soft); font-size: 0.95rem; }
+
+/* Small helpers */
+
+.lede { font-size: 1.15rem; color: var(--ink-soft); }
+.section-note { color: var(--ink-soft); font-size: 0.95rem; }
+
+.pub-list { padding-left: 1.25rem; }
+.pub-list li { margin-bottom: 0.6rem; }
+
+@media (max-width: 640px) {
+  .intro { flex-direction: column; }
+  .intro .portrait { flex-basis: auto; width: 170px; }
+  .infobox { float: none; width: 100%; margin: 1rem 0; }
+  .banner h1, .hero h1 { font-size: 1.9rem; }
+  .hero { padding: 3.5rem 0; }
+}

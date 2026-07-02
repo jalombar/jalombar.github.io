@@ -1,0 +1,16 @@
+# Site navigation tabs, in display order.
+# To remove a tab, delete its block. To add one, copy a block and edit it.
+# Entries with "external: true" open in a new browser tab and must use a full URL.
+- title: Home
+  url: /
+- title: About Me
+  url: /about/
+- title: Research
+  url: /research/
+- title: Publications
+  url: "https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-7444-7599&sort=date+desc"
+  external: true
+- title: Outreach
+  url: /outreach/
+- title: Favorite Links
+  url: /links/

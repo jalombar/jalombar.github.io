@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="site-name" href="{{ '/' | relative_url }}">Jamie Lombardi</a>
+      <nav aria-label="Site">
+        <ul class="site-nav">
+          {% for item in site.data.navigation %}
+          <li>
+            {% if item.external %}
+            <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+            {% else %}
+            <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>
+        James C. Lombardi, Jr.<br>
+        Department of Physics, Allegheny College<br>
+        Carr Hall 115, Meadville, PA 16335
+      </p>
+      <p>
+        <a href="mailto:jalombar@allegheny.edu">jalombar@allegheny.edu</a><br>
+        (814) 332-2975<br>
+        <a href="https://orcid.org/0000-0002-7444-7599" target="_blank" rel="noopener">ORCID</a> &middot;
+        <a href="https://github.com/jalombar" target="_blank" rel="noopener">GitHub</a> &middot;
+        <a href="https://sites.allegheny.edu/physics/faculty/james-c-lombardi-jr/" target="_blank" rel="noopener">Faculty page</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

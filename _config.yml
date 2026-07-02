@@ -1,0 +1,21 @@
+title: Jamie Lombardi
+description: >-
+  James C. Lombardi, Jr. is a professor of physics at Allegheny College
+  who uses hydrodynamic simulations to study what happens when stars collide.
+url: "https://jalombar.github.io"
+# Set baseurl to "" if this repository is ever renamed to jalombar.github.io
+baseurl: "/personal-website"
+
+author:
+  name: James C. Lombardi, Jr.
+
+markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
