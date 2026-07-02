@@ -2,12 +2,12 @@
 # To add a link, copy a title/url/note block. External URLs only.
 - category: Watch
   links:
-    - title: "KITP talk: The hydrodynamics of stellar collisions"
+    - title: "KITP talk: Dealing with SPH codes"
       url: "https://online.kitp.ucsb.edu/online/stars17/lombardi/"
       note: A recorded research talk I gave at the Kavli Institute for Theoretical Physics in 2017.
-    - title: "KITP talk: Common-envelope evolution"
+    - title: "KITP talk: Modelling light curves of luminous red novae"
       url: "https://online.kitp.ucsb.edu/online/stars17/lombardi2/"
-      note: A second KITP talk, on stars that share a single gaseous envelope.
+      note: A second KITP talk, on the light given off when two stars merge.
     - title: Cosmic Collisions (Discovery Channel)
       url: "http://physics.allegheny.edu/jalombar/Cosmic_Collisions_TV_program.mp4"
       note: A television program featuring visualizations from our simulations. Large video file.
