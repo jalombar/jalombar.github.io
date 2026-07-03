@@ -38,10 +38,10 @@
       <p>
         James C. Lombardi, Jr.<br>
         Department of Physics, Allegheny College<br>
-        Carr Hall 115, Meadville, PA 16335
+        Carr Hall 117, Meadville, PA 16335
       </p>
       <p>
-        <a href="mailto:jalombar@allegheny.edu">jalombar@allegheny.edu</a><br>
+        <span class="email-address">jalombar at allegheny dot edu</span><br>
         (814) 332-2975<br>
         <a href="https://orcid.org/0000-0002-7444-7599" target="_blank" rel="noopener">ORCID</a> &middot;
         <a href="https://github.com/jalombar" target="_blank" rel="noopener">GitHub</a> &middot;
@@ -49,5 +49,44 @@
       </p>
     </div>
   </footer>
+
+  <script>
+    // Assemble every email address in the browser so it isn't sitting in the
+    // page source as plain text for scrapers to harvest. Visitors without
+    // JavaScript still see the spelled-out "jalombar at allegheny dot edu".
+    // Each address becomes a mailto: link that also copies itself to the
+    // clipboard on click, a fallback for devices with no mail handler.
+    (function () {
+      var addr = 'jalombar' + '@' + 'allegheny' + '.' + 'edu';
+
+      function flashCopied(link) {
+        var tip = document.createElement('span');
+        tip.className = 'copied-tip';
+        tip.textContent = 'Copied!';
+        document.body.appendChild(tip);
+        var r = link.getBoundingClientRect();
+        tip.style.left = (window.pageXOffset + r.left) + 'px';
+        tip.style.top = (window.pageYOffset + r.top - 30) + 'px';
+        setTimeout(function () { tip.remove(); }, 1200);
+      }
+
+      var spans = document.querySelectorAll('.email-address');
+      Array.prototype.forEach.call(spans, function (el) {
+        var link = document.createElement('a');
+        link.href = 'mailto:' + addr;
+        link.textContent = addr;
+        link.className = 'email-address';
+        link.addEventListener('click', function () {
+          // Do not preventDefault: let the mailto open a composer where one exists.
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(addr).then(function () {
+              flashCopied(link);
+            }).catch(function () {});
+          }
+        });
+        el.replaceWith(link);
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -23,9 +23,9 @@
     - title: ESO
       url: "https://www.eso.org/public/"
       note: Discoveries and pictures from the European Southern Observatory's telescopes in Chile.
-    - title: "Chandra press release: Close Encounters of the Stellar Kind"
-      url: "https://chandra.harvard.edu/press/03_releases/press_073003.html"
-      note: An X-ray observatory's view of what stellar collisions leave behind.
+    - title: NASA Universe
+      url: "https://science.nasa.gov/universe/"
+      note: NASA's hub for stars, galaxies, black holes, and the science behind the missions.
 
 - category: Do science yourself
   links:

@@ -148,18 +148,200 @@ main > .wrap { padding-top: 2rem; }
 .hero h1 { color: #ffffff; font-size: 2.4rem; margin: 0 0 0.75rem; }
 .hero p { color: var(--on-space); font-size: 1.15rem; margin: 0; }
 
+/* Research page hero: text panel beside the collision image (stacks on phones).
+   Both share one black card; the photo is cropped 10% on every edge. */
+.research-hero {
+  display: flex;
+  align-items: stretch;
+  margin: 1rem 0 1rem;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.research-hero-text {
+  flex: 1 1 42%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.75rem 2rem;
+  border-left: 4px solid var(--accent);
+}
+
+.research-hero-text h1 { color: #ffffff; font-size: 2.4rem; margin: 0 0 0.75rem; }
+.research-hero-text p { color: var(--on-space); font-size: 1.15rem; margin: 0; }
+
+.research-hero-image {
+  flex: 1 1 58%;
+  min-width: 0;
+  align-self: center;
+  overflow: hidden;
+}
+
+.research-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1.6667); /* central 60% shows -> 20% cropped off each edge */
+  transform-origin: center;
+}
+
+/* Tighten the gap between the hero and the first section below it (halved) */
+main > .wrap.research-body { padding-top: 1rem; }
+.research-body > h2:first-child { margin-top: 1.125rem; }
+
 /* Intro row with the portrait */
 
 .intro {
   display: flex;
   gap: 2rem;
-  align-items: flex-start;
+  align-items: center;
   margin-top: 0.5rem;
 }
 
 .intro .portrait {
-  flex: 0 0 180px;
+  flex: 0 0 216px;
+  overflow: hidden;
   border-radius: 10px;
+}
+
+.intro .portrait img {
+  display: block;
+  width: 111.111%;
+  max-width: none;
+  transform: translateX(-10%);
+}
+
+.about-figure {
+  float: right;
+  width: 192px;
+  max-width: 45%;
+  margin: 0.25rem 0 1rem 1.5rem;
+}
+
+/* Contains floated figures so following content (e.g. the footer) never overlaps. */
+.clear { clear: both; }
+
+/* Featured videos (Outreach "Watch" section) */
+.channel-promo {
+  margin: 0 0 1.5rem;
+  padding: 1.25rem 1.25rem 0.75rem;
+  background: var(--paper-tint);
+  border-radius: 10px;
+}
+.channel-promo-title { margin: 0 0 0.3rem; font-size: 1.35rem; }
+.channel-promo-note { margin: 0 0 0.5rem; color: var(--ink-soft); font-size: 0.95rem; }
+.video-feature-kicker {
+  margin: 0 0 0.2rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.video-feature-list { list-style: none; margin: 0; padding: 0; }
+
+.video-feature {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.video-feature:first-child { border-top: 0; padding-top: 0.25rem; }
+
+.video-feature-thumb {
+  position: relative;
+  flex: 0 0 160px;
+  max-width: 40%;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-feature-thumb img { display: block; width: 100%; height: auto; }
+
+.video-feature-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding-left: 0.15rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.62);
+  border-radius: 50%;
+}
+
+.video-feature-body { flex: 1 1 auto; min-width: 0; }
+.video-feature-title { margin: 0 0 0.3rem; font-size: 1rem; }
+.video-feature-note { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+
+/* Transient "Copied!" confirmation shown when an email address is clicked. */
+.copied-tip {
+  position: absolute;
+  z-index: 100;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.8rem;
+  color: #ffffff;
+  background: #222222;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.about-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-figure figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* Student photo floated beside the Research "For prospective students" text. */
+.figure-student {
+  float: right;
+  width: 18rem;
+  max-width: 42%;
+  margin: 0.25rem 0 1rem 1.5rem;
+}
+.figure-student img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.figure-student figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* Figure sized to sit in the text column beside the floated infobox (About page). */
+.figure-wide {
+  max-width: calc((100% - 19.25rem) * 0.9); /* a touch under the Career text width; leaves the infobox's space free */
+  margin: 0.75rem 0 1.5rem;
+}
+.figure-wide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure-wide figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-align: center;
 }
 
 /* Card grids (home shortcuts and research papers) */
@@ -300,7 +482,13 @@ main > .wrap { padding-top: 2rem; }
 @media (max-width: 640px) {
   .intro { flex-direction: column; }
   .intro .portrait { flex-basis: auto; width: 170px; }
+  .about-figure { float: none; width: 220px; max-width: 100%; margin: 1rem auto; }
   .infobox { float: none; width: 100%; margin: 1rem 0; }
-  .banner h1, .hero h1 { font-size: 1.9rem; }
+  .banner h1, .hero h1, .research-hero-text h1 { font-size: 1.9rem; }
   .hero { padding: 3.5rem 0; }
+  .research-hero { flex-direction: column; align-items: stretch; }
+  .research-hero-image { align-self: stretch; }
+  .video-feature-thumb { flex-basis: 120px; }
+  .figure-wide { max-width: 100%; }
+  .figure-student { float: none; width: auto; max-width: 100%; margin: 1rem 0; }
 }
