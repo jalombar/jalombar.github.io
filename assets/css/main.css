@@ -138,8 +138,9 @@ main > .wrap { padding-top: 2rem; }
 .banner-text { flex: 1 1 auto; min-width: 0; }
 .banner-portrait {
   flex: 0 0 auto;
-  height: 156px;
-  width: auto;
+  width: clamp(110px, 18vw, 156px);
+  height: clamp(110px, 18vw, 156px);
+  object-fit: cover;
   border-radius: 8px;
   display: block;
 }
@@ -473,7 +474,15 @@ main > .wrap.research-body { padding-top: 1rem; }
 .pub-list li { margin-bottom: 0.6rem; }
 
 @media (max-width: 640px) {
-  .banner-portrait { height: 110px; }
+   .banner-inner {
+       flex-direction: column;
+       align-items: flex-start;
+   }
+    
+   .banner-portrait {
+       width: 110px;
+       height: 110px;
+   }
   .about-figure { float: none; width: 220px; max-width: 100%; margin: 1rem auto; }
   .infobox { float: none; width: 100%; margin: 1rem 0; }
   .banner h1, .hero h1, .research-hero-text h1 { font-size: 1.9rem; }
