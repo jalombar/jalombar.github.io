@@ -8,8 +8,11 @@
 - title: Research
   url: /research/
 - title: Publications
-  url: "https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-7444-7599&sort=date+desc"
-  external: true
+  url: /publications/
+- title: Simulations
+  url: /simulations/
+- title: For Students
+  url: /students/
 - title: Outreach
   url: /outreach/
 - title: Favorite Links

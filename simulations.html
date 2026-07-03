@@ -1,0 +1,28 @@
+---
+layout: default
+title: Simulations
+description: >-
+  Movies rendered directly from the Lombardi group's simulations of stellar
+  collisions and mergers.
+permalink: /simulations/
+---
+
+<div class="wrap">
+  <h1>Watch the Simulations</h1>
+  <p class="section-note">
+    Movies rendered directly from our simulations. Use them freely, but please
+    credit the paper listed in the caption.
+  </p>
+
+  <div class="video-grid">
+    {% for movie in site.data.movies %}
+    <figure class="video-item">
+      <video controls preload="metadata" poster="{{ movie.poster | relative_url }}">
+        <source src="{{ movie.file | relative_url }}" type="video/mp4">
+      </video>
+      <h3>{{ movie.title }}</h3>
+      <figcaption>{{ movie.caption }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</div>
