@@ -43,7 +43,7 @@
       </p>
       <p>
         <span class="email-address">jalombar at allegheny dot edu</span><br>
-        (814) 332-2975<br>
+        <span class="phone-number">eight one four, three three two, two nine seven five</span><br>
         <a href="https://orcid.org/0000-0002-7444-7599" target="_blank" rel="noopener">ORCID</a> &middot;
         <a href="https://github.com/jalombar" target="_blank" rel="noopener">GitHub</a> &middot;
         <a href="https://sites.allegheny.edu/physics/faculty/james-c-lombardi-jr/" target="_blank" rel="noopener">Faculty page</a>
@@ -85,6 +85,23 @@
             }).catch(function () {});
           }
         });
+        el.replaceWith(link);
+      });
+    })();
+
+    // Assemble the phone number in the browser too, so it isn't sitting in the
+    // page source for scrapers to add to telemarketer lists. The digits are
+    // concatenated one at a time so no phone-number pattern appears in the HTML;
+    // visitors without JavaScript still see the spelled-out fallback.
+    (function () {
+      var d = '8' + '1' + '4' + '3' + '3' + '2' + '2' + '9' + '7' + '5';
+      var shown = '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6);
+      var els = document.querySelectorAll('.phone-number');
+      Array.prototype.forEach.call(els, function (el) {
+        var link = document.createElement('a');
+        link.href = 'tel:+1' + d;
+        link.textContent = shown;
+        link.className = 'phone-number';
         el.replaceWith(link);
       });
     })();

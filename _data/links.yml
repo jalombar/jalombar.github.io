@@ -36,6 +36,9 @@
     - title: SkAI
       url: "https://skai-institute.org/about-skai/skai-institute-members/"
       note: A multi-institutional research organization dedicated to merging artificial intelligence with astrophysics
+    - title: collAIder collaborators
+      url: "https://elenagonzalez870.github.io/collAIder/team.html"
+      note: The students and researchers behind the collAIder machine learning tool.
 
 - category: Observing tonight
   links:
