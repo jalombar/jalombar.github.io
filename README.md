@@ -52,16 +52,12 @@ Edit `_data/links.yml` or `_data/outreach.yml`. Please check that a URL
 actually loads before adding it; the whole point of this site is no dead
 links.
 
-## Renaming the repository to jalombar.github.io
+## Publishing
 
-The site currently publishes at `https://jalombar.github.io/personal-website`.
-To publish at `https://jalombar.github.io` instead:
-
-1. Rename the repository to `jalombar.github.io` (Settings, then Repository name).
-2. In `_config.yml`, change `baseurl: "/personal-website"` to `baseurl: ""`.
-
-Nothing else needs to change; every internal link is written relative to
-`baseurl`.
+The repository is named `jalombar.github.io`, so GitHub Pages serves it at the
+root: `https://jalombar.github.io`. Because the repository name matches the
+account, `baseurl` in `_config.yml` is empty. Every internal link is written
+relative to `baseurl`, so links keep working no matter what `baseurl` is set to.
 
 ## Optional local preview
 
