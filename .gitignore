@@ -5,3 +5,8 @@ Gemfile.lock
 .DS_Store
 vendor/
 .bundle/
+
+# Editor backup and autosave files
+*~
+\#*#
+.#*

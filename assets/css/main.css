@@ -138,9 +138,8 @@ main > .wrap { padding-top: 2rem; }
 .banner-text { flex: 1 1 auto; min-width: 0; }
 .banner-portrait {
   flex: 0 0 auto;
-  width: clamp(110px, 18vw, 156px);
+  width: auto;
   height: clamp(110px, 18vw, 156px);
-  object-fit: cover;
   border-radius: 8px;
   display: block;
 }
@@ -213,6 +212,17 @@ main > .wrap.research-body { padding-top: 1rem; }
   max-width: 45%;
   margin: 0.25rem 0 1rem 1.5rem;
 }
+
+/* StarSmasher emblem beside the Software section on the research page. */
+.starsmasher-badge {
+  float: right;
+  width: 120px;
+  max-width: 30%;
+  margin: 0 0 0.75rem 1.5rem;
+  transition: opacity 0.2s ease;
+}
+.starsmasher-badge img { display: block; width: 100%; height: auto; }
+.starsmasher-badge:hover { opacity: 0.8; }
 
 /* Contains floated figures so following content (e.g. the footer) never overlaps. */
 .clear { clear: both; }
@@ -439,7 +449,10 @@ main > .wrap.research-body { padding-top: 1rem; }
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  /* Wide enough a laptop shows two columns (larger movie windows); the
+     min(…, 100%) lets each card shrink to one column on phones without
+     forcing horizontal overflow. */
+  grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
   gap: 1.25rem;
   margin: 1.5rem 0;
 }
@@ -454,16 +467,33 @@ main > .wrap.research-body { padding-top: 1rem; }
 .video-item video { display: block; width: 100%; background: #000; }
 .video-item h3 { margin: 0; padding: 0.75rem 1.25rem 0.35rem; }
 
-/* Grouped link lists (Favorite Links and Outreach pages) */
+/* Grouped links (Favorite Links page), laid out as a compact card grid so a
+   long list of categories stays scannable without filling the whole screen. */
 
-.link-list { list-style: none; padding: 0; margin: 1rem 0 2rem; }
-
-.link-list li {
-  padding: 0.85rem 0;
-  border-bottom: 1px solid var(--rule);
+.link-cards {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.85rem;
 }
 
-.link-list .link-note { display: block; color: var(--ink-soft); font-size: 0.95rem; }
+.link-card {
+  padding: 0.85rem 1rem;
+  background: var(--paper-tint);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+}
+
+.link-card > a { font-weight: 600; }
+
+.link-card .link-note {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
 
 /* Small helpers */
 
@@ -483,10 +513,10 @@ main > .wrap.research-body { padding-top: 1rem; }
     width: auto;
     height: 130px;
     max-width: 100%;
-    object-fit: contain;
   }
 
   .about-figure { float: none; width: 220px; max-width: 100%; margin: 1rem auto; }
+  .starsmasher-badge { float: none; width: 120px; max-width: 40%; margin: 0.25rem 0 0.75rem; }
   .infobox { float: none; width: 100%; margin: 1rem 0; }
   .banner h1, .hero h1, .research-hero-text h1 { font-size: 1.9rem; }
   .hero { padding: 3.5rem 0; }
@@ -496,3 +526,4 @@ main > .wrap.research-body { padding-top: 1rem; }
   .figure-wide { max-width: 100%; }
   .figure-student { float: none; width: auto; max-width: 100%; margin: 1rem 0; }
 }
+
