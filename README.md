@@ -2,7 +2,7 @@
 
 Source for Jamie Lombardi's personal academic site, built with
 [Jekyll](https://jekyllrb.com/) and hosted on GitHub Pages. GitHub builds the
-site automatically on every push to `main`; there is nothing to install and no
+site automatically on every push to `site-rebuild`; there is nothing to install and no
 build step to run.
 
 ## How the site is organized
