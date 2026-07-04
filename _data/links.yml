@@ -24,6 +24,9 @@
     - title: collAIder
       url: "https://elenagonzalez870.github.io/collAIder/"
       note: A machine learning tool that enables rapid predictions of stellar collision outcomes.
+    - title: StarSmasher
+      url: "https://github.com/jalombar/starsmasher"
+      note: Our open-source smoothed particle hydrodynamics code for simulating stellar collisions and mergers.
 
 - category: Community
   links:
@@ -34,11 +37,20 @@
       url: "https://skai-institute.org/about-skai/skai-institute-members/"
       note: A multi-institutional research organization dedicated to merging artificial intelligence with astrophysics
 
+- category: Observing tonight
+  links:
+    - title: Heavens-Above
+      url: "https://heavens-above.com/"
+      note: Predicts when the ISS and other satellites will pass over your location, with charts to help you spot them.
+    - title: Tonight's Sky
+      url: "https://tonightssky.com/"
+      note: A quick rundown of the stars, planets, and deep-sky objects on view after dark.
+    - title: Clear Outside
+      url: "https://clearoutside.com/forecast/41.64/-80.15"
+      note: An hour-by-hour cloud and observing-conditions forecast, so you know when the skies will cooperate.
+
 - category: Explore the universe
   links:
-    - title: Webb Space Telescope
-      url: "https://webbtelescope.org/images"
-      note: Browse the newest deep views of stars, nebulae, and galaxies.
     - title: NOIRLab
       url: "https://noirlab.edu/public/"
       note: News and images from the US national optical observatories.
@@ -69,9 +81,6 @@
     - title: Webb Space Telescope image galleries
       url: "https://webbtelescope.org/images"
       note: The sharpest infrared views of the cosmos ever taken.
-    - title: SEDS Messier Database
-      url: "http://messier.seds.org/"
-      note: A classic guide to the Messier catalog, including the star clusters our group studies.
     - title: Stellarium Web
       url: "https://stellarium-web.org"
       note: A free planetarium in your browser. See what is above your horizon tonight.
