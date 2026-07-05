@@ -224,6 +224,17 @@ main > .wrap.research-body { padding-top: 1rem; }
 .starsmasher-badge img { display: block; width: 100%; height: auto; }
 .starsmasher-badge:hover { opacity: 0.8; }
 
+/* collAIder logo beside the Software section on the research page. */
+.collaider-badge {
+  float: left;
+  width: 200px;
+  max-width: 42%;
+  margin: 0.2rem 1.5rem 0.75rem 0;
+  transition: opacity 0.2s ease;
+}
+.collaider-badge img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.collaider-badge:hover { opacity: 0.8; }
+
 /* Two photos stacked in a single right-hand column (Beyond physics on the
    About page); text flows down the left and wraps beneath when long enough. */
 .beyond-figures {
@@ -534,6 +545,7 @@ main > .wrap.research-body { padding-top: 1rem; }
   .about-figure { float: none; width: 220px; max-width: 100%; margin: 1rem auto; }
   .beyond-figures { float: none; width: 240px; max-width: 100%; margin: 1rem auto; }
   .starsmasher-badge { float: none; width: 120px; max-width: 40%; margin: 0.25rem 0 0.75rem; }
+  .collaider-badge { float: none; width: 220px; max-width: 100%; margin: 0.25rem 0 0.75rem; }
   .infobox { float: none; width: 100%; margin: 1rem 0; }
   .banner h1, .hero h1, .research-hero-text h1 { font-size: 1.9rem; }
   .hero { padding: 3.5rem 0; }
