@@ -3,7 +3,7 @@
 # block. External URLs only. The featured YouTube videos near the top of the
 # page are laid out separately in links.html.
 
-# --- Outreach content (kept near the top of the page) ---
+# --- Talks and videos (kept near the top of the page) ---
 - category: Watch
   links:
     - title: "KITP talk: Dealing with SPH codes"

@@ -14,7 +14,6 @@ build step to run.
 | `_data/papers.yml` | The paper cards on the Research page |
 | `_data/movies.yml` | The simulation movies on the Research page |
 | `_data/links.yml` | The Favorite Links page content |
-| `_data/outreach.yml` | The Outreach page content |
 | `_layouts/default.html` | The shared page frame (header, nav, footer) |
 | `assets/css/main.css` | All styling; colors are defined at the top |
 | `index.html`, `about.html`, ... | The pages themselves |
@@ -46,9 +45,9 @@ order on the page.
 3. Put the movie in `assets/movies/`, the poster in `assets/images/posters/`,
    and copy a block in `_data/movies.yml`. Keep movies under about 50 MB.
 
-### Update Favorite Links or Outreach
+### Update Favorite Links
 
-Edit `_data/links.yml` or `_data/outreach.yml`. Please check that a URL
+Edit `_data/links.yml`. Please check that a URL
 actually loads before adding it; the whole point of this site is no dead
 links.
 

@@ -254,7 +254,7 @@ main > .wrap.research-body { padding-top: 1rem; }
 /* Contains floated figures so following content (e.g. the footer) never overlaps. */
 .clear { clear: both; }
 
-/* Featured videos (Outreach "Watch" section) */
+/* Featured videos ("Watch" section of the Favorite Links page) */
 .channel-promo {
   margin: 0 0 1.5rem;
   padding: 1.25rem 1.25rem 0.75rem;
