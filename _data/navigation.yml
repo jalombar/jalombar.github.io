@@ -1,0 +1,17 @@
+# Site navigation tabs, in display order.
+# To remove a tab, delete its block. To add one, copy a block and edit it.
+# Entries with "external: true" open in a new browser tab and must use a full URL.
+- title: Home
+  url: /
+- title: About Me
+  url: /about/
+- title: Research
+  url: /research/
+- title: Publications
+  url: /publications/
+- title: Simulations
+  url: /simulations/
+- title: For Students
+  url: /students/
+- title: Favorite Links
+  url: /links/

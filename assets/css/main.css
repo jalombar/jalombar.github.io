@@ -1,0 +1,558 @@
+/* One stylesheet for the whole site. Colors and spacing live in the
+   custom properties below so the look can be retuned in one place. */
+
+:root {
+  --ink: #22293a;
+  --ink-soft: #56607a;
+  --paper: #ffffff;
+  --paper-tint: #f4f6fa;
+  --space: #101830;
+  --space-deep: #0a0f22;
+  --on-space: #e8ecf7;
+  --on-space-soft: #aab4d0;
+  --accent: #e2662c;
+  --accent-dark: #b84e1c;
+  --rule: #dde3ee;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --wrap: 62rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3 { font-family: var(--serif); line-height: 1.25; color: var(--ink); }
+h1 { font-size: 2rem; margin: 0 0 0.75rem; }
+h2 { font-size: 1.5rem; margin: 2.25rem 0 0.75rem; }
+h3 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
+
+a { color: var(--accent-dark); }
+a:hover { color: var(--accent); }
+
+img, video { max-width: 100%; height: auto; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 1.25rem; }
+
+main { padding-bottom: 3rem; }
+main > .wrap { padding-top: 2rem; }
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  background: var(--paper);
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+.skip-link:focus { left: 0.5rem; top: 0.5rem; }
+
+/* Header and navigation */
+
+.site-header {
+  background: var(--space);
+  border-bottom: 3px solid var(--accent);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.site-name {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--on-space);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.35rem 0.7rem;
+  color: var(--on-space-soft);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.97rem;
+}
+
+.site-nav a:hover { color: var(--on-space); background: rgba(255, 255, 255, 0.08); }
+.site-nav a.active { color: var(--on-space); background: rgba(255, 255, 255, 0.14); }
+
+/* Footer */
+
+.site-footer {
+  background: var(--space-deep);
+  color: var(--on-space-soft);
+  font-size: 0.95rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.site-footer a { color: var(--on-space); }
+
+/* Dark banner used on the home page and as the research hero */
+
+.banner {
+  background: var(--space);
+  color: var(--on-space);
+  padding: 1.4rem 0;
+}
+
+.banner h1 { color: #ffffff; font-size: 2.4rem; margin: 0; }
+.banner .tagline { color: var(--on-space-soft); font-size: 1.2rem; margin: 0.5rem 0 0; }
+
+/* Banner row within the content column: text left, portrait at the right edge. */
+.banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.banner-text { flex: 1 1 auto; min-width: 0; }
+.banner-portrait {
+  flex: 0 0 auto;
+  width: auto;
+  height: clamp(110px, 18vw, 156px);
+  border-radius: 8px;
+  display: block;
+}
+
+.hero {
+  background-color: var(--space-deep);
+  background-size: cover;
+  background-position: center;
+  padding: 5.5rem 0;
+}
+
+/* Legibility scrim so hero text stays readable over the imagery */
+.hero .hero-panel {
+  max-width: 34rem;
+  background: rgba(8, 12, 28, 0.72);
+  padding: 1.5rem 1.75rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--accent);
+}
+
+.hero h1 { color: #ffffff; font-size: 2.4rem; margin: 0 0 0.75rem; }
+.hero p { color: var(--on-space); font-size: 1.15rem; margin: 0; }
+
+/* Research page hero: text panel beside the collision image (stacks on phones).
+   Both share one black card; the photo is cropped 10% on every edge. */
+.research-hero {
+  display: flex;
+  align-items: stretch;
+  margin: 1rem 0 1rem;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.research-hero-text {
+  flex: 1 1 42%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.75rem 2rem;
+  border-left: 4px solid var(--accent);
+}
+
+.research-hero-text h1 { color: #ffffff; font-size: 2.4rem; margin: 0 0 0.75rem; }
+.research-hero-text p { color: var(--on-space); font-size: 1.15rem; margin: 0; }
+
+.research-hero-image {
+  flex: 1 1 58%;
+  min-width: 0;
+  align-self: center;
+  overflow: hidden;
+}
+
+.research-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1.6667); /* central 60% shows -> 20% cropped off each edge */
+  transform-origin: center;
+}
+
+/* Tighten the gap between the hero and the first section below it (halved) */
+main > .wrap.research-body { padding-top: 1rem; }
+.research-body > h2:first-child { margin-top: 1.125rem; }
+
+.about-figure {
+  float: right;
+  width: 224px;
+  max-width: 45%;
+  margin: 0.25rem 0 1rem 1.5rem;
+}
+
+/* StarSmasher emblem beside the Software section on the research page. */
+.starsmasher-badge {
+  float: right;
+  width: 120px;
+  max-width: 30%;
+  margin: 0 0 0.75rem 1.5rem;
+  transition: opacity 0.2s ease;
+}
+.starsmasher-badge img { display: block; width: 100%; height: auto; }
+.starsmasher-badge:hover { opacity: 0.8; }
+
+/* collAIder logo beside the Software section on the research page. */
+.collaider-badge {
+  float: left;
+  width: 200px;
+  max-width: 42%;
+  margin: 0.2rem 1.5rem 0.75rem 0;
+  transition: opacity 0.2s ease;
+}
+.collaider-badge img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.collaider-badge:hover { opacity: 0.8; }
+
+/* Two photos stacked in a single right-hand column (Beyond physics on the
+   About page); text flows down the left and wraps beneath when long enough. */
+.beyond-figures {
+  float: right;
+  width: 224px;
+  max-width: 45%;
+  margin: 0.25rem 0 1rem 1.5rem;
+}
+.beyond-figures .about-figure {
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 1rem;
+}
+.beyond-figures .about-figure:last-child { margin-bottom: 0; }
+
+/* Contains floated figures so following content (e.g. the footer) never overlaps. */
+.clear { clear: both; }
+
+/* Featured videos ("Watch" section of the Favorite Links page) */
+.channel-promo {
+  margin: 0 0 1.5rem;
+  padding: 1.25rem 1.25rem 0.75rem;
+  background: var(--paper-tint);
+  border-radius: 10px;
+}
+.channel-promo-title { margin: 0 0 0.3rem; font-size: 1.35rem; }
+.channel-promo-note { margin: 0 0 0.5rem; color: var(--ink-soft); font-size: 0.95rem; }
+.video-feature-kicker {
+  margin: 0 0 0.2rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.video-feature-list { list-style: none; margin: 0; padding: 0; }
+
+.video-feature {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.video-feature:first-child { border-top: 0; padding-top: 0.25rem; }
+
+.video-feature-thumb {
+  position: relative;
+  flex: 0 0 160px;
+  max-width: 40%;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-feature-thumb img { display: block; width: 100%; height: auto; }
+
+.video-feature-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding-left: 0.15rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.62);
+  border-radius: 50%;
+}
+
+.video-feature-body { flex: 1 1 auto; min-width: 0; }
+.video-feature-title { margin: 0 0 0.3rem; font-size: 1rem; }
+.video-feature-note { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+
+/* Transient "Copied!" confirmation shown when an email address is clicked. */
+.copied-tip {
+  position: absolute;
+  z-index: 100;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.8rem;
+  color: #ffffff;
+  background: #222222;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.about-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-figure figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* Student photo floated beside the Research "For prospective students" text. */
+.figure-student {
+  float: right;
+  width: 18rem;
+  max-width: 42%;
+  margin: 0.25rem 0 1rem 1.5rem;
+}
+.figure-student img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.figure-student figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* Figure sized to sit in the text column beside the floated infobox (About page). */
+.figure-wide {
+  max-width: calc((100% - 19.25rem) * 0.9); /* a touch under the Career text width; leaves the infobox's space free */
+  margin: 0.75rem 0 1.5rem;
+}
+.figure-wide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.figure-wide figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* Card grids (home shortcuts and research papers) */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.25rem;
+  padding: 0;
+  margin: 1.5rem 0;
+  list-style: none;
+}
+
+.card {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--paper);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body { padding: 1rem 1.25rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+.card h3 { margin: 0; }
+.card p { margin: 0; color: var(--ink-soft); font-size: 0.98rem; }
+
+.card .figure {
+  margin: 0;
+  background: #000;
+}
+
+.card .figure img { display: block; width: 100%; height: 14rem; object-fit: cover; }
+
+.card .figure figcaption,
+.video-item figcaption {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 0.4rem 1.25rem;
+  background: var(--paper-tint);
+}
+
+.card-links { margin-top: auto; padding-top: 0.5rem; display: flex; gap: 0.6rem; }
+
+.shortcut-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  text-decoration: none;
+  background: var(--paper-tint);
+}
+.shortcut-card:hover { border-color: var(--accent); }
+.shortcut-card h2 { margin: 0 0 0.4rem; font-size: 1.25rem; }
+.shortcut-card p { margin: 0; color: var(--ink-soft); font-size: 0.97rem; }
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 7px;
+  border: 1px solid var(--accent-dark);
+  color: var(--accent-dark);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.btn:hover { background: var(--accent); border-color: var(--accent); color: #ffffff; }
+
+.btn-solid {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+.btn-solid:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #ffffff; }
+
+/* Wikipedia-style infobox on the About page */
+
+.infobox {
+  float: right;
+  width: 17.5rem;
+  margin: 0 0 1.25rem 1.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--paper-tint);
+  font-size: 0.92rem;
+  overflow: hidden;
+}
+
+.infobox img { display: block; width: 100%; }
+.infobox .infobox-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.6rem 0.75rem 0;
+}
+.infobox dl { margin: 0; padding: 0.5rem 0.9rem 0.9rem; }
+.infobox dt { font-weight: 600; margin-top: 0.55rem; }
+.infobox dd { margin: 0; color: var(--ink-soft); }
+
+/* Video gallery on the research page */
+
+.video-grid {
+  display: grid;
+  /* Wide enough a laptop shows two columns (larger movie windows); the
+     min(…, 100%) lets each card shrink to one column on phones without
+     forcing horizontal overflow. */
+  grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.video-item {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.video-item video { display: block; width: 100%; background: #000; }
+.video-item h3 { margin: 0; padding: 0.75rem 1.25rem 0.35rem; }
+
+/* Grouped links (Favorite Links page), laid out as a compact card grid so a
+   long list of categories stays scannable without filling the whole screen. */
+
+.link-cards {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.85rem;
+}
+
+.link-card {
+  padding: 0.85rem 1rem;
+  background: var(--paper-tint);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+}
+
+.link-card > a { font-weight: 600; }
+
+.link-card .link-note {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+/* Small helpers */
+
+.lede { font-size: 1.15rem; color: var(--ink-soft); }
+.section-note { color: var(--ink-soft); font-size: 0.95rem; }
+
+.pub-list { padding-left: 1.25rem; }
+.pub-list li { margin-bottom: 0.6rem; }
+
+@media (max-width: 640px) {
+  .banner-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .banner-portrait {
+    width: auto;
+    height: 130px;
+    max-width: 100%;
+  }
+
+  .about-figure { float: none; width: 220px; max-width: 100%; margin: 1rem auto; }
+  .beyond-figures { float: none; width: 240px; max-width: 100%; margin: 1rem auto; }
+  .starsmasher-badge { float: none; width: 120px; max-width: 40%; margin: 0.25rem 0 0.75rem; }
+  .collaider-badge { float: none; width: 220px; max-width: 100%; margin: 0.25rem 0 0.75rem; }
+  .infobox { float: none; width: 100%; margin: 1rem 0; }
+  .banner h1, .hero h1, .research-hero-text h1 { font-size: 1.9rem; }
+  .hero { padding: 3.5rem 0; }
+  .research-hero { flex-direction: column; align-items: stretch; }
+  .research-hero-image { align-self: stretch; }
+  .video-feature-thumb { flex-basis: 120px; }
+  .figure-wide { max-width: 100%; }
+  .figure-student { float: none; width: auto; max-width: 100%; margin: 1rem 0; }
+}
+

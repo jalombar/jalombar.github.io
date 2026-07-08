@@ -1,0 +1,29 @@
+---
+layout: default
+title: Stellar Collision Simulations
+description: >-
+  Movies rendered directly from the Lombardi group's simulations of stellar
+  collisions and mergers.
+permalink: /simulations/
+---
+
+<div class="wrap">
+  <h1>Watch the Simulations</h1>
+  <p>
+    Movies rendered directly from our simulations, many with the help of the
+    <a href="https://www.cambridge.org/core/journals/publications-of-the-astronomical-society-of-australia/article/splash-an-interactive-visualisation-tool-for-smoothed-particle-hydrodynamics-simulations/20C22A93AB1CD3ADC1F5B8439B639A24" target="_blank" rel="noopener">SPLASH</a>
+    visualization software (Price 2007).
+  </p>
+
+  <div class="video-grid">
+    {% for movie in site.data.movies %}
+    <figure class="video-item">
+      <video controls preload="metadata" poster="{{ movie.poster | relative_url }}">
+        <source src="{{ movie.file | relative_url }}" type="video/mp4">
+      </video>
+      <h3>{{ movie.title }}</h3>
+      <figcaption>{{ movie.caption }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</div>

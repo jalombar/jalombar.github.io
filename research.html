@@ -1,0 +1,90 @@
+---
+layout: default
+title: "Research: Stellar Collisions & Hydrodynamic Simulations"
+description: >-
+  The Lombardi group simulates collisions and mergers between stars. See what
+  we do and the software we build.
+permalink: /research/
+---
+
+<div class="wrap">
+  <div class="research-hero">
+    <div class="research-hero-text">
+      <h1>Simulating Stellar Collisions</h1>
+      <p>
+        In crowded star clusters and near giant black holes, stars really do
+        crash into each other. My students and I recreate those crashes on
+        supercomputers.
+      </p>
+    </div>
+    <div class="research-hero-image">
+      <img src="{{ '/assets/images/hero-research.jpg' | relative_url }}" alt="Two stars colliding in a supercomputer simulation">
+    </div>
+  </div>
+</div>
+
+<div class="wrap research-body">
+  <h2>What we do</h2>
+  <p>
+    Our group studies what happens when stars get too close to each other. We
+    use a technique called smoothed particle hydrodynamics, or SPH: a star is
+    modeled as hundreds of thousands of fluid particles, and the computer
+    follows every particle through the encounter as gravity and gas pressure
+    fight it out. We can replay a collision from any angle, slow it down, and
+    measure things no telescope ever could.
+  </p>
+  <p>
+    Around quiet neighborhoods like the Sun's, collisions essentially never
+    happen. In the dense cores of globular clusters and near the supermassive
+    black holes at the centers of galaxies, they are a fact of life, and the
+    wreckage explains some of the strangest objects in the sky: "blue
+    straggler" stars that look impossibly young, stars stripped of their outer
+    layers, ultracompact X-ray binaries, and sources of gravitational waves.
+  </p>
+  <p>
+    A stellar collision unfolds over hours to days, and the chance of pointing
+    a telescope at the right star at the right moment is essentially zero.
+    Simulation is how we get to <a href="{{ '/simulations/' | relative_url }}">watch one</a>.
+    We build and share the SPH code
+    <a href="https://github.com/jalombar/starsmasher" target="_blank" rel="noopener">StarSmasher</a>
+    for exactly this purpose. Modeling these collisions draws on stellar
+    dynamics, stellar evolution, and hydrodynamics, all of which play
+    important roles.
+  </p>
+  <p>
+    The science behind this work is collected in our
+    <a href="{{ '/publications/' | relative_url }}">recent papers</a>, and much
+    of it is done by Allegheny undergraduates. Interested students can explore
+    <a href="{{ '/students/' | relative_url }}">research opportunities for students</a>.
+  </p>
+
+  <h2>Software</h2>
+  <a class="starsmasher-badge" href="https://github.com/jalombar/starsmasher" target="_blank" rel="noopener" aria-label="StarSmasher on GitHub">
+    <img src="{{ '/assets/images/starsmasher-emblem-purple-transparent.png' | relative_url }}" alt="StarSmasher logo" width="120" height="120">
+  </a>
+  <p>
+    <a href="https://github.com/jalombar/starsmasher" target="_blank" rel="noopener">StarSmasher</a>
+    is the SPH code behind our simulations, developed openly on GitHub and
+    descended from the earlier StarCrash code. If you want to smash stars
+    together yourself, start there.
+  </p>
+  <a class="collaider-badge" href="https://elenagonzalez870.github.io/collAIder/" target="_blank" rel="noopener" aria-label="collAIder">
+    <img src="{{ '/assets/images/collAIder.jpg' | relative_url }}" alt="collAIder logo" width="200" height="143">
+  </a>
+  <p>
+    <a href="https://elenagonzalez870.github.io/collAIder/" target="_blank" rel="noopener">collAIder</a>
+    is a machine learning tool that predicts the outcome of a stellar collision
+    in an instant, with no new simulation required. Trained on the tens of
+    thousands of SPH collisions behind
+    <a href="https://ui.adsabs.harvard.edu/abs/arXiv:2602.10191/abstract" target="_blank" rel="noopener">González Prieto et al. 2026</a>,
+    it forecasts how many stars survive an encounter and what they look like
+    afterward, fast enough to drop into large N-body models of dense star
+    clusters.
+  </p>
+  <p>
+    Make Me A Star (MMAS) is an older, lightweight tool that builds a model of
+    a collision product from two parent stars, developed with Jessica Sawyer
+    Warren and released under the GNU GPL. Download:
+    <a href="{{ '/assets/software/mmas/mmas1.6.tar.gz' | relative_url }}">version 1.6</a>.
+  </p>
+</div>

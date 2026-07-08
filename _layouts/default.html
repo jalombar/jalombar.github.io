@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="zwN7pJZ6y8ZMxVqSKOxvvAOpv7hySdkQEUabcOxwox8">
+  {% seo %}
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="site-name" href="{{ '/' | relative_url }}">Jamie Lombardi</a>
+      <nav aria-label="Site">
+        <ul class="site-nav">
+          {% for item in site.data.navigation %}
+          <li>
+            {% if item.external %}
+            <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+            {% else %}
+            <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>
+        James C. Lombardi, Jr.<br>
+        Department of Physics, Allegheny College<br>
+        Carr Hall 117, Meadville, PA 16335
+      </p>
+      <p>
+        <span class="email-address">jalombar at allegheny dot edu</span><br>
+        <span class="phone-number">eight one four, three three two, two nine seven five</span><br>
+        <a href="https://orcid.org/0000-0002-7444-7599" target="_blank" rel="noopener">ORCID</a> &middot;
+        <a href="https://github.com/jalombar" target="_blank" rel="noopener">GitHub</a> &middot;
+        <a href="https://sites.allegheny.edu/physics/faculty/james-c-lombardi-jr/" target="_blank" rel="noopener">Faculty page</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Assemble every email address in the browser so it isn't sitting in the
+    // page source as plain text for scrapers to harvest. Visitors without
+    // JavaScript still see the spelled-out "jalombar at allegheny dot edu".
+    // Each address becomes a mailto: link that also copies itself to the
+    // clipboard on click, a fallback for devices with no mail handler.
+    (function () {
+      var addr = 'jalombar' + '@' + 'allegheny' + '.' + 'edu';
+
+      function flashCopied(link) {
+        var tip = document.createElement('span');
+        tip.className = 'copied-tip';
+        tip.textContent = 'Copied!';
+        document.body.appendChild(tip);
+        var r = link.getBoundingClientRect();
+        tip.style.left = (window.pageXOffset + r.left) + 'px';
+        tip.style.top = (window.pageYOffset + r.top - 30) + 'px';
+        setTimeout(function () { tip.remove(); }, 1200);
+      }
+
+      var spans = document.querySelectorAll('.email-address');
+      Array.prototype.forEach.call(spans, function (el) {
+        var link = document.createElement('a');
+        link.href = 'mailto:' + addr;
+        link.textContent = addr;
+        link.className = 'email-address';
+        link.addEventListener('click', function () {
+          // Do not preventDefault: let the mailto open a composer where one exists.
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(addr).then(function () {
+              flashCopied(link);
+            }).catch(function () {});
+          }
+        });
+        el.replaceWith(link);
+      });
+    })();
+
+    // Assemble the phone number in the browser too, so it isn't sitting in the
+    // page source for scrapers to add to telemarketer lists. The digits are
+    // concatenated one at a time so no phone-number pattern appears in the HTML;
+    // visitors without JavaScript still see the spelled-out fallback.
+    (function () {
+      var d = '8' + '1' + '4' + '3' + '3' + '2' + '2' + '9' + '7' + '5';
+      var shown = '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6);
+      var els = document.querySelectorAll('.phone-number');
+      Array.prototype.forEach.call(els, function (el) {
+        var link = document.createElement('a');
+        link.href = 'tel:+1' + d;
+        link.textContent = shown;
+        link.className = 'phone-number';
+        el.replaceWith(link);
+      });
+    })();
+  </script>
+</body>
+</html>

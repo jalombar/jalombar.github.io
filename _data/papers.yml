@@ -1,0 +1,78 @@
+# Featured papers on the Research page, newest first.
+# To add a paper: copy a block, drop a figure into assets/images/papers/,
+# and fill in the arXiv ID. The ads link accepts the arXiv:<id> form shown below.
+- title: Teaching a computer to predict stellar collisions
+  citation: González Prieto et al. 2026, The Astrophysical Journal
+  arxiv: "2602.10191"
+  ads: "https://ui.adsabs.harvard.edu/abs/arXiv:2602.10191/abstract"
+  image: /assets/images/papers/gonzalezprieto2026.png
+  image_alt: >-
+    Maps of collision outcomes by speed and impact distance, with colored
+    regions for mergers, two surviving stars, and stripped stars
+  blurb: >-
+    We ran nearly 28,000 collision simulations and used them to train machine
+    learning models that predict, in an instant, what a collision between any
+    two stars will leave behind.
+
+- title: Star crashes near the galaxy's central black hole
+  citation: Rose et al. 2026, The Astrophysical Journal
+  arxiv: "2511.01811"
+  ads: "https://ui.adsabs.harvard.edu/abs/arXiv:2511.01811/abstract"
+  image: /assets/images/papers/rose2026.png
+  image_alt: Two glowing stars pressed together at the moment of collision
+  blurb: >-
+    Near a supermassive black hole, stars move so fast that they slam into each
+    other head-on. We modeled what those impacts do to Sun-like stars in the
+    heart of our own galaxy.
+
+- title: A massive star meets a pair of black holes
+  citation: Kıroğlu et al. 2025, The Astrophysical Journal Letters
+  arxiv: "2501.09068"
+  ads: "https://ui.adsabs.harvard.edu/abs/arXiv:2501.09068/abstract"
+  image: /assets/images/papers/kiroglu2025.png
+  image_alt: >-
+    Gas from a disrupted star flowing around two black holes, each surrounded
+    by its own bright disk
+  blurb: >-
+    When a pair of black holes tears a massive star apart, each one can capture
+    its own swirling disk of stellar gas. Those disks nudge the black holes'
+    spins into alignment, a fingerprint that gravitational wave detectors can
+    search for.
+
+- title: Stripped stars from high-speed collisions
+  citation: Gibson et al. 2025, The Astrophysical Journal
+  arxiv: "2410.02146"
+  ads: "https://ui.adsabs.harvard.edu/abs/arXiv:2410.02146/abstract"
+  image: /assets/images/papers/gibson2025.png
+  image_alt: Three snapshots of two stars colliding at high speed and shedding gas
+  blurb: >-
+    In galactic centers, stars can collide at thousands of kilometers per
+    second. These hit-and-run impacts tear off a star's outer layers and leave
+    behind chemically unusual survivors. The movies below show these
+    simulations in action.
+
+- title: When planets collide
+  citation: Ghosh et al. 2024, The Astronomical Journal
+  arxiv: "2312.07648"
+  ads: "https://ui.adsabs.harvard.edu/abs/arXiv:2312.07648/abstract"
+  image: /assets/images/papers/ghosh2024.jpg
+  image_alt: >-
+    Grid of simulation snapshots showing two sub-Neptune planets grazing,
+    merging, or shattering depending on the impact
+  blurb: >-
+    Stars are not the only things that crash. We simulated collisions between
+    sub-Neptune planets and found that most impacts strip away their thick
+    atmospheres rather than merging the planets.
+
+- title: A star nibbled by a black hole
+  citation: Kıroğlu et al. 2023, The Astrophysical Journal
+  arxiv: "2210.08002"
+  ads: "https://ui.adsabs.harvard.edu/abs/arXiv:2210.08002/abstract"
+  image: /assets/images/papers/kiroglu2023.jpg
+  image_alt: >-
+    Sequence of a star being stretched into streams of gas during repeated
+    close passes by a black hole
+  blurb: >-
+    A star that swings too close to a mid-sized black hole can lose part of
+    itself on each pass and survive to repeat the ordeal. We simulated these
+    partial disruptions to predict the flares telescopes should see.

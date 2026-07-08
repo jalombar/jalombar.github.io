@@ -1,0 +1,89 @@
+# Favorite Links page content. Each category becomes a section heading, and its
+# links are rendered as a grid of cards. To add a link, copy a title/url/note
+# block. External URLs only. The featured YouTube videos near the top of the
+# page are laid out separately in links.html.
+
+# --- Talks and videos (kept near the top of the page) ---
+- category: Watch
+  links:
+    - title: "KITP talk: Dealing with SPH codes"
+      url: "https://online.kitp.ucsb.edu/online/stars17/lombardi/"
+      note: A recorded research talk I gave at the Kavli Institute for Theoretical Physics in 2017.
+    - title: "KITP talk: Modelling light curves of luminous red novae"
+      url: "https://online.kitp.ucsb.edu/online/stars17/lombardi2/"
+      note: A second KITP talk, on the light given off when two stars merge.
+    - title: Cosmic Collisions (Discovery Channel)
+      url: "http://physics.allegheny.edu/jalombar/Cosmic_Collisions_TV_program.mp4"
+      note: A television program featuring visualizations from our simulations.
+
+- category: Research tools
+  links:
+    - title: NASA Astrophysics Data System
+      url: "https://ui.adsabs.harvard.edu/"
+      note: The search engine astronomers use to find research papers.
+    - title: collAIder
+      url: "https://elenagonzalez870.github.io/collAIder/"
+      note: A machine learning tool that enables rapid predictions of stellar collision outcomes.
+    - title: StarSmasher
+      url: "https://github.com/jalombar/starsmasher"
+      note: Our open-source smoothed particle hydrodynamics code for simulating stellar collisions and mergers.
+
+- category: Community
+  links:
+    - title: Allegheny College Department of Physics
+      url: "https://sites.allegheny.edu/physics/"
+      note: My academic home, and a great place to study physics and astrophysics as an undergraduate.
+    - title: SkAI
+      url: "https://skai-institute.org/about-skai/skai-institute-members/"
+      note: A multi-institutional research organization dedicated to merging artificial intelligence with astrophysics
+    - title: collAIder collaborators
+      url: "https://elenagonzalez870.github.io/collAIder/team.html"
+      note: The students and researchers behind the collAIder machine learning tool.
+
+- category: Observing tonight
+  links:
+    - title: Heavens-Above
+      url: "https://heavens-above.com/"
+      note: Predicts when the ISS and other satellites will pass over your location, with charts to help you spot them.
+    - title: Tonight's Sky
+      url: "https://tonightssky.com/"
+      note: A quick rundown of the stars, planets, and deep-sky objects on view after dark.
+    - title: Clear Outside
+      url: "https://clearoutside.com/forecast/41.64/-80.15"
+      note: An hour-by-hour cloud and observing-conditions forecast, so you know when the skies will cooperate.
+
+- category: Explore the universe
+  links:
+    - title: NOIRLab
+      url: "https://noirlab.edu/public/"
+      note: News and images from the US national optical observatories.
+    - title: ESO
+      url: "https://www.eso.org/public/"
+      note: Discoveries and pictures from the European Southern Observatory's telescopes in Chile.
+    - title: NASA Universe
+      url: "https://science.nasa.gov/universe/"
+      note: NASA's hub for stars, galaxies, black holes, and the science behind the missions.
+
+- category: Do science yourself
+  links:
+    - title: Zooniverse
+      url: "https://www.zooniverse.org"
+      note: Help real research projects classify galaxies, hunt planets, and more. No experience needed.
+    - title: PhET Interactive Simulations
+      url: "https://phet.colorado.edu"
+      note: Free, hands-on physics and astronomy simulations from the University of Colorado.
+    - title: "LIGO: Learn More"
+      url: "https://www.ligo.caltech.edu/page/learn-more"
+      note: How we detect gravitational waves from merging black holes and neutron stars.
+
+- category: The sky and its pictures
+  links:
+    - title: Astronomy Picture of the Day
+      url: "https://apod.nasa.gov/apod/"
+      note: A new image of the universe every day, with a short explanation by astronomers.
+    - title: Webb Space Telescope image galleries
+      url: "https://webbtelescope.org/images"
+      note: The sharpest infrared views of the cosmos ever taken.
+    - title: Stellarium Web
+      url: "https://stellarium-web.org"
+      note: A free planetarium in your browser. See what is above your horizon tonight.

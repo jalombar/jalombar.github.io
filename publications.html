@@ -1,0 +1,71 @@
+---
+layout: default
+title: "Publications: Computational Astrophysics"
+description: >-
+  Featured and recent papers from the Lombardi group on stellar collisions and
+  their aftermath, with a link to the full publication list on NASA ADS.
+permalink: /publications/
+---
+
+<div class="wrap">
+  <h1>Publications</h1>
+  <p class="lede">
+    A selection of our recent papers on stellar collisions and the objects they
+    leave behind. For the complete, always-current record, jump to NASA Astrophysics Data System (ADS).
+  </p>
+  <p>
+    <a class="btn btn-solid" href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&amp;fq=%7B!type%3Daqp%20v%3D%24fq_author%7D&amp;fq_author=(((*%3A*%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20John%20R%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20J%20%20R%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20Jack%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20Jack%20P%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20Julien%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20James%20C%20%2C%20Sr%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20John%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20J%20%20P%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20Jason%20V%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20J%20%20L%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20Jack%20P%20%2C%20III%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20Jason%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20JohnR%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20Juan%20M%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20J%C3%A9r%C3%B4me%22)%20NOT%20author_facet_hier%3A%220%2FStatman%2C%20D%22%20NOT%20author_facet_hier%3A%220%2FHocquette%2C%20A%22)%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20Johann%22%20NOT%20author_facet_hier%3A%221%2FLombardi%2C%20J%2FLombardi%2C%20Julia%22)&amp;fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&amp;p_=0&amp;q=%20author%3A%22Lombardi%2Cj%22%20year%3A1995-2222&amp;sort=date%20desc%2C%20bibcode%20desc" target="_blank" rel="noopener">All publications on NASA ADS</a>
+  </p>
+
+  <h2>Recent work</h2>
+  <p>
+    A sampling of our papers from the last few years. Every figure comes from
+    the paper it accompanies, and Allegheny undergraduates contributed to the
+    simulations behind them.
+  </p>
+
+  <ul class="card-grid">
+    {% for paper in site.data.papers %}
+    <li class="card">
+      <figure class="figure">
+        <img src="{{ paper.image | relative_url }}" alt="{{ paper.image_alt }}" loading="lazy">
+        <figcaption>
+          Figure from <a href="{{ paper.ads }}" target="_blank" rel="noopener">{{ paper.citation }}</a>
+        </figcaption>
+      </figure>
+      <div class="card-body">
+        <h3>{{ paper.title }}</h3>
+        <p>{{ paper.blurb }}</p>
+        <div class="card-links">
+          <a class="btn" href="{{ paper.ads }}" target="_blank" rel="noopener">ADS</a>
+          <a class="btn" href="https://arxiv.org/abs/{{ paper.arxiv }}" target="_blank" rel="noopener">arXiv</a>
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <h2>More recent papers</h2>
+  <ul class="pub-list">
+    <li>
+      Kremer et al. 2023, Monthly Notices of the Royal Astronomical Society:
+      the flares produced when a stellar-mass black hole shreds a star and
+      winds reprocess the light
+      (<a href="https://ui.adsabs.harvard.edu/abs/arXiv:2305.08905/abstract" target="_blank" rel="noopener">ADS</a>,
+      <a href="https://arxiv.org/abs/2305.08905" target="_blank" rel="noopener">arXiv</a>).
+    </li>
+    <li>
+      Kremer et al. 2022, The Astrophysical Journal: a survey of collisions
+      and close encounters between black holes and main-sequence stars
+      (<a href="https://ui.adsabs.harvard.edu/abs/arXiv:2201.12368/abstract" target="_blank" rel="noopener">ADS</a>,
+      <a href="https://arxiv.org/abs/2201.12368" target="_blank" rel="noopener">arXiv</a>).
+    </li>
+    <li>
+      Hatfull et al. 2021, Monthly Notices of the Royal Astronomical Society:
+      building realistic 3D models of touching binary stars on their way to a
+      merger
+      (<a href="https://ui.adsabs.harvard.edu/abs/arXiv:2107.11480/abstract" target="_blank" rel="noopener">ADS</a>,
+      <a href="https://arxiv.org/abs/2107.11480" target="_blank" rel="noopener">arXiv</a>).
+    </li>
+  </ul>
+</div>
